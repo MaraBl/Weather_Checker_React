@@ -1,0 +1,35 @@
+.blue {
+  background-color: #1d8ca6;
+}
+
+.dark_blue {
+  background-color: #023047;
+}
+
+.orange {
+  background-color: #fb8500;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.weather_box {
+  max-width: 700px;
+  background-color: #8ecae6;
+  border-radius: 20px;
+  margin: 2rem 1rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.weather_box div,
+h2 {
+  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+}
+
+.weather_box .line {
+  border-bottom: 1px solid #023047;
+}
