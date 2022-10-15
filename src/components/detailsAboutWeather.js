@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherIcon from "./weatherIcon.js";
+import ShareSocial from "./shareSocial";
 
 const DetailsAboutWeather = (props) => {
   let weather = props.weather;
@@ -50,6 +51,9 @@ const DetailsAboutWeather = (props) => {
           </div>
           <div className="col-sm-12 col-md-5 col-lg-5">
             <WeatherIcon iconCode={weather.weather[0].icon} />
+          </div>
+          <div className="col-12 d-flex justify-content-center">
+            <ShareSocial />
           </div>
         </div>
       </div>
