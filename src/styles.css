@@ -33,3 +33,34 @@ h2 {
 .weather_box .line {
   border-bottom: 1px solid #023047;
 }
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  box-shadow: rgb(210, 210, 210) 0px 1px 4px, rgb(210, 210, 210) 0px 0px 0px 3px;
+  color: #fff;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.fa-envelope {
+  background: #dd4b39;
+  color: white;
+}
+
+.shareSocial {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
