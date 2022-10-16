@@ -6,6 +6,7 @@ const SearchWeather = () => {
     key: "baf4fb5477253eeaea0f5e20ca1097c2",
     url: "https://api.openweathermap.org/data/2.5/"
   };
+
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState("");
   const [validation, setValidation] = useState("");
@@ -16,19 +17,23 @@ const SearchWeather = () => {
     if (!city) {
       setValidation("Please enter a city or town name");
       return;
+    } else {
+      fetch(`${api.url}weather?q=${city}&appid=${api.key}&units=metric`)
+        .then((result) => {
+          if (result.status >= 400) {
+            setValidation("Sorry, something went wrong... " + result.message);
+          }
+          return result.json();
+        })
+        .then((result) => {
+          if (result.cod === 200) {
+            setWeather(result);
+            setCity("");
+          } else {
+            setValidation("Sorry, something went wrong... " + result.message);
+          }
+        });
     }
-    fetch(`${api.url}weather?q=${city}&appid=${api.key}&units=metric`)
-      .then((res) => res.json())
-      .then((result) => {
-        if (result.cod === 200) {
-          setWeather(result);
-          setCity("");
-          setValidation("");
-          //console.log(result);
-        } else {
-          setValidation("Sorry, something went wrong... " + result.message);
-        }
-      });
   }
 
   return (
@@ -55,7 +60,7 @@ const SearchWeather = () => {
           value="search"
         />
       </form>
-      <div className="validation-message p-1">{validation}</div>
+      <div className="validation-message p-1 text-danger">{validation}</div>
       <div className="d-flex justify-content-center">
         <DetailsAboutWeather weather={weather} />
       </div>
@@ -63,3 +68,4 @@ const SearchWeather = () => {
   );
 };
 export default SearchWeather;
+
