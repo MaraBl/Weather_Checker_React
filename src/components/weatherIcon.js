@@ -5,7 +5,7 @@ const WeatherIcon = (props) => {
 
   return (
     <div>
-      <img alt="icon" src={imgURL} width="100" height="80" />
+      <img alt="weather icon" src={imgURL} width="100" height="80" />
     </div>
   );
 };
