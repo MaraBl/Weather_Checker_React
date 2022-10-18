@@ -29,6 +29,7 @@ const SearchWeather = () => {
           if (result.cod === 200) {
             setWeather(result);
             setCity("");
+            setValidation("");
           } else {
             setValidation("Sorry, something went wrong... " + result.message);
           }
